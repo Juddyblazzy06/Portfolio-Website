@@ -12,8 +12,7 @@ import { SiTensorflow, SiMongodb, SiPostgresql, SiCsharp, SiDotnet } from "react
 const personalDetails = [
   { label: "Name", value: "Jude Amienghemhen" },
   { label: "Location", value: "Nigeria" },
-  { label: "Email", value: "dev.jude@gmail.com" },
-  { label: "Role", value: "Software engineer and frontend developer" },
+  { label: "Email", value: "amiensjude@gmail.com" },
 ];
 
 const jobSummary =
@@ -125,14 +124,15 @@ const skillsData = [
 ];
 
 const funFacts = [
-  "I often go swimming with my friends",
+  "I often go to the gym with my friends",
   "My first computer bug was an actual bug",
   "I like watching TV shows/series",
-  "I use Linux with GNOME while waiting for COSMIC",
-  "I support Liverpool FC",
+  "I use Linux with GNOME while waiting for COSMIC OS",
+  "I support Barcelona FC",
   "Linux runs on 100% of the world's top 500 supercomputers",
-  "My favourite game is the Tomb Raider franchise",
+  "My favourite game is FIFA",
   "I once spent 3 hours debugging a missing semicolon",
+  "I'm a bit of a perfectionist",
 ];
 
 const About = () => {

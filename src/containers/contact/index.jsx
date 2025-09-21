@@ -103,12 +103,21 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // You'll need to replace these with your actual EmailJS credentials
+      // Check if EmailJS environment variables are configured
+      const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+      const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error('EmailJS configuration is missing. Please check your environment variables.');
+      }
+
+      // EmailJS credentials from environment variables for security
       const result = await emailjs.sendForm(
-        'service_k96m919', // Replace with your service ID
-        'template_e0ghmqv', // Replace with your template ID
+        serviceId,
+        templateId,
         form.current,
-        'XUrdPEjwldIfXlHAw' // Replace with your public key
+        publicKey
       );
       
       console.log('Email sent successfully:', result.text);

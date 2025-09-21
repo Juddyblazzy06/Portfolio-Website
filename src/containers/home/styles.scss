@@ -129,7 +129,14 @@
     max-width: 900px;
     margin: 0 auto 3rem;
     color: var(--theme-sub-text-color);
-    opacity: 0.9;
+    opacity: 0.95;
+
+    /* ✅ Enhanced visibility for light mode */
+    [data-theme="light"] & {
+      color: #D97706; /* Same orange/gold as testimonial for optimal readability */
+      opacity: 1;
+      font-weight: 500;
+    }
   }
   
   &__cta-button {
@@ -384,7 +391,13 @@
     font-size: 1.6rem;
     color: var(--theme-sub-text-color);
     opacity: 0.8;
-    font-weight: 500;
+
+    /* ✅ Enhanced visibility for light mode */
+    [data-theme="light"] & {
+      color: #D97706; /* Same orange/gold as testimonial for consistency */
+      opacity: 1;
+      font-weight: 500;
+    }
   }
 
   &__quote-indicators {
@@ -561,6 +574,11 @@
     font-size: 2.2rem;
     font-weight: 700;
     color: var(--theme-text-color);
+
+    /* ✅ Enhanced visibility for light mode */
+    [data-theme="light"] & {
+      color: #B45309; /* Darker orange/brown for titles, complementing testimonial color */
+    }
   }
   
   &__project-description {
@@ -569,6 +587,13 @@
     line-height: 1.6;
     color: var(--theme-sub-text-color);
     opacity: 0.9;
+
+    /* ✅ Enhanced visibility for light mode */
+    [data-theme="light"] & {
+      color: #D97706; /* Same orange/gold as testimonial for optimal readability */
+      opacity: 1;
+      font-weight: 500;
+    }
   }
   
   &__view-all-bottom {

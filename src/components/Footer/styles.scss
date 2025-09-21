@@ -1,11 +1,19 @@
 .footer {
-  background: rgba(0, 0, 0, 0.05);
+  background: var(--theme-input-background);
   backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--theme-border-color);
   padding: 2rem 0 1rem;
   margin-top: auto;
   position: relative;
+  box-shadow: 0 -2px 8px var(--theme-shadow);
   
+  // Enhanced light mode styling
+  [data-theme="light"] & {
+    background: rgba(248, 250, 252, 0.95);
+    border-top: 1px solid #e2e8f0;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
+  }
+
   // Dark mode styling
   [data-theme="dark"] & {
     background: rgba(0, 0, 0, 0.3);
@@ -42,6 +50,11 @@
     font-size: 1.4rem;
     font-weight: 500;
     transition: all 0.3s ease;
+
+    /* ✅ Enhanced visibility for light mode */
+    [data-theme="light"] & {
+      color: #374151; /* Dark gray for excellent readability */
+    }
     
     &:hover {
       color: var(--theme-main-color);
@@ -62,11 +75,26 @@
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--theme-input-background);
+    border: 1px solid var(--theme-border-color);
     text-decoration: none;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 2px 4px var(--theme-shadow);
+    
+    /* ✅ Enhanced light mode visibility */
+    [data-theme="light"] & {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #d1d5db;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ✅ Dark mode styling */
+    [data-theme="dark"] & {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
     
     &::before {
       content: '';
@@ -83,7 +111,8 @@
     
     &:hover {
       background: var(--social-color, var(--theme-main-color));
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 5px 15px var(--theme-shadow-hover);
+      transform: translateY(-2px);
       
       .footer__social-icon {
         color: white;
@@ -98,18 +127,44 @@
     transition: all 0.3s ease;
     position: relative;
     z-index: 1;
+
+    /* ✅ Enhanced visibility for light mode */
+    [data-theme="light"] & {
+      color: #374151; /* Dark gray for excellent contrast */
+    }
+
+    /* ✅ Dark mode styling */
+    [data-theme="dark"] & {
+      color: var(--theme-sub-text-color);
+    }
   }
 
   &__copyright {
     text-align: center;
     padding-top: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--theme-border-color);
+
+    /* ✅ Enhanced light mode styling */
+    [data-theme="light"] & {
+      border-top: 1px solid #e2e8f0;
+    }
+
+    /* ✅ Dark mode styling */
+    [data-theme="dark"] & {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
     
     p {
       margin: 0;
       color: var(--theme-sub-text-color);
       font-size: 1.3rem;
       opacity: 0.8;
+
+      /* ✅ Enhanced visibility for light mode */
+      [data-theme="light"] & {
+        color: #374151; /* Dark gray for excellent readability */
+        opacity: 0.9;
+      }
     }
   }
 }

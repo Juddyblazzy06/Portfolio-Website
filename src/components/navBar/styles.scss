@@ -76,6 +76,7 @@
             display: flex;
             align-items: center;
             gap: 15px;
+            flex-shrink: 0; /* ✅ Prevent shrinking on small screens */
         }
     }
 }
@@ -89,13 +90,16 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
+    max-width: 100vw; /* ✅ Prevent horizontal overflow */
+    max-height: 100vh; /* ✅ Prevent vertical overflow */
     background: rgba(0, 0, 0, 0.5);
     z-index: 998; /* ✅ Below menu but above content */
     display: none;
     opacity: 0;
     transition: opacity 0.3s ease;
+    overflow: hidden; /* ✅ Prevent any overflow */
 }
 
 @media only screen and (max-width : 768px){
@@ -104,11 +108,13 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        width: 100vw; /* ✅ Full viewport width */
+        width: 100%; /* ✅ Use 100% instead of 100vw to prevent overflow */
+        max-width: 100vw; /* ✅ Ensure it never exceeds viewport */
         height: calc(100vh - 80px); /* ✅ Full viewport height minus navbar */
         position: fixed; /* ✅ Fixed positioning */
         top: 80px;
         left: -100%; /* ✅ Start completely off-screen */
+        right: 0; /* ✅ Ensure proper positioning */
         background: var(--theme-nav-background-color); /* ✅ Use theme background */
         backdrop-filter: blur(20px); /* ✅ Enhanced blur effect */
         border-right: 1px solid var(--theme-border-color);
@@ -192,5 +198,86 @@
     .navbar-backdrop {
         display: block;
         opacity: 1;
+    }
+}
+
+/* ✅ Additional responsiveness for smaller mobile devices */
+@media only screen and (max-width: 480px) {
+    .navbar {
+        height: 70px; /* ✅ Slightly smaller height for small screens */
+        
+        &__container {
+            padding: 0 15px; /* ✅ Reduced padding for small screens */
+        }
+    }
+
+    .navbar__container__menu {
+        top: 70px; /* ✅ Adjust for smaller navbar height */
+        height: calc(100vh - 70px); /* ✅ Adjust height accordingly */
+        padding-top: 1.5rem; /* ✅ Reduced top padding */
+        
+        &__item {
+            &__links {
+                padding: 15px 0; /* ✅ Reduced padding for smaller screens */
+                font-size: 1.6rem; /* ✅ Slightly smaller font for very small screens */
+            }
+        }
+    }
+
+    .nav-icon {
+        padding: 8px; /* ✅ Smaller padding for small screens */
+    }
+
+    .navbar__container__actions {
+        gap: 10px; /* ✅ Reduced gap for small screens */
+    }
+}
+
+/* ✅ Extra small devices (phones in portrait) */
+@media only screen and (max-width: 360px) {
+    .navbar {
+        height: 65px; /* ✅ Even smaller for very small devices */
+        
+        &__container {
+            padding: 0 10px; /* ✅ Minimal padding */
+        }
+    }
+
+    .navbar__container__menu {
+        top: 65px;
+        height: calc(100vh - 65px);
+        padding-top: 1rem;
+        
+        &__item {
+            &__links {
+                padding: 12px 0; /* ✅ Compact padding */
+                font-size: 1.5rem; /* ✅ Smaller font for readability */
+            }
+        }
+    }
+
+    .nav-icon {
+        padding: 6px; /* ✅ Minimal padding */
+    }
+
+    .navbar__container__actions {
+        gap: 8px; /* ✅ Minimal gap for very small screens */
+    }
+}
+
+/* ✅ Landscape mode adjustments for mobile */
+@media only screen and (max-height: 500px) and (orientation: landscape) {
+    .navbar__container__menu {
+        height: calc(100vh - 60px); /* ✅ Adjust for landscape */
+        padding-top: 0.5rem; /* ✅ Minimal top padding */
+        justify-content: flex-start; /* ✅ Start from top */
+        overflow-y: auto; /* ✅ Allow scrolling if needed */
+        
+        &__item {
+            &__links {
+                padding: 10px 0; /* ✅ Compact padding for landscape */
+                font-size: 1.4rem; /* ✅ Smaller font for landscape */
+            }
+        }
     }
 }
