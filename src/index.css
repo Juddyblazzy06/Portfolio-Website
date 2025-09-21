@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+
+
+:root{
+    /* Dark theme (default) */
+    --theme-background-color : #1d1d1d;
+    --theme-main-color : #ffdd40;
+    --theme-sub-text-color : #ffffff;
+    --theme-nav-background-color : #181818;
+    --theme-card-background : #2a2a2a;
+    --theme-border-color : #333333;
+    --theme-shadow : rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="light"] {
+    /* Light theme */
+    --theme-background-color : #ffffff;
+    --theme-main-color : #2563eb;
+    --theme-sub-text-color : #1f2937;
+    --theme-nav-background-color : #f8fafc;
+    --theme-card-background : #f1f5f9;
+    --theme-border-color : #e2e8f0;
+    --theme-shadow : rgba(0, 0, 0, 0.1);
+}
+
+/* Legacy support for existing CSS variables */
+--yellow-theme-background-color: var(--theme-background-color);
+--yellow-theme-main-color: var(--theme-main-color);
+--yellow-theme-sub-text-color: var(--theme-sub-text-color);
+--yellow-theme-nav-background-color: var(--theme-nav-background-color);
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+
+body {
+    background: var(--theme-background-color);
+    color: var(--theme-sub-text-color);
+    height: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#root{
+    height: 100%;
+}

@@ -1,0 +1,181 @@
+.navbar{
+    background-color: var(--theme-nav-background-color);
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* ✅ High z-index for navbar */
+    transition: background-color 0.3s ease;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--theme-border-color);
+
+    &__container{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: inherit;
+        padding: 0px 20px;
+        flex: 1;
+        justify-content: space-between;
+        
+        &__logo{
+            color: var(--theme-main-color);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            
+            &:hover {
+                transform: rotate(360deg);
+            }
+        }
+
+        &__menu{
+            display: flex;
+            list-style: none;
+            text-align: center;
+
+            &__item{
+                line-height: 40px;
+                margin-right: 1.5rem;
+                font-size: 1.6rem;
+
+                &::after{
+                    content: '';
+                    display: block;
+                    height: 3px;
+                    width: 0;
+                    background: transparent;
+                    transition: all 0.5s ease;
+                }
+
+                &:hover::after{
+                    width: 100%;
+                    background: var(--theme-main-color);
+                }
+
+                &__links{
+                    color: var(--theme-main-color);
+                    text-decoration: none;
+                    padding: 0.5rem;
+                    transition: color 0.3s ease;
+                }
+            }
+        }
+        
+        &__actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+    }
+}
+
+.nav-icon{
+    display: none;
+}
+
+/* ✅ Backdrop overlay for mobile menu */
+.navbar-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998; /* ✅ Below menu but above content */
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+@media only screen and (max-width : 768px){
+    .navbar__container__menu{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100vw; /* ✅ Full viewport width */
+        height: calc(100vh - 80px); /* ✅ Full viewport height minus navbar */
+        position: fixed; /* ✅ Fixed positioning */
+        top: 80px;
+        left: -100%; /* ✅ Start completely off-screen */
+        background: var(--theme-nav-background-color); /* ✅ Use theme background */
+        backdrop-filter: blur(20px); /* ✅ Enhanced blur effect */
+        border-right: 1px solid var(--theme-border-color);
+        box-shadow: 2px 0 20px rgba(0, 0, 0, 0.3); /* ✅ Add shadow for depth */
+        z-index: 999; /* ✅ High z-index to appear above content */
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* ✅ Smooth easing */
+        opacity: 0; /* ✅ Start transparent */
+        padding-top: 2rem; /* ✅ Top spacing */
+
+        &.active{
+            left: 0; /* ✅ Slide in from left */
+            opacity: 1; /* ✅ Fade in */
+        }
+
+        &__item{
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid var(--theme-border-color);
+            margin: 0;
+            padding: 0;
+            
+            &:last-child {
+                border-bottom: none; /* ✅ Remove border on last item */
+            }
+
+            &__links{
+                display: block;
+                width: 100%;
+                padding: 20px 0;
+                font-size: 1.8rem; /* ✅ Larger font for mobile */
+                font-weight: 500;
+                color: var(--theme-main-color);
+                text-decoration: none;
+                transition: all 0.3s ease;
+                position: relative;
+
+                &:hover {
+                    background: var(--theme-border-color);
+                    color: var(--theme-text-color);
+                }
+
+                &:active {
+                    transform: scale(0.98); /* ✅ Touch feedback */
+                }
+            }
+
+            /* ✅ Remove the underline animation on mobile */
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    .nav-icon{
+        display: block;
+        cursor: pointer;
+        color: var(--theme-main-color);
+        padding: 10px;
+        transition: all 0.3s ease;
+        z-index: 1001; /* ✅ Above mobile menu */
+        position: relative;
+
+        &:hover {
+            color: var(--theme-text-color);
+            transform: scale(1.1);
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+
+    /* ✅ Show backdrop on mobile when menu is active */
+    .navbar-backdrop {
+        display: block;
+        opacity: 1;
+    }
+}

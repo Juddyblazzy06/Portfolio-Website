@@ -1,0 +1,75 @@
+.skills{
+    &__content-wrapper{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        padding: 20px;
+        gap: 30px;
+
+        .skills__card {
+            padding: 30px;
+            
+            .skills__content-wrapper__inner-content__category-text{
+                display: inline-block;
+                color: var(--theme-main-color);
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 1.2;
+                letter-spacing: 0.5px;
+                position: relative;
+                text-transform: uppercase;
+                padding: 10px 15px;
+                border-bottom: 3px solid var(--theme-main-color);
+                margin-bottom: 30px;
+                text-align: center;
+                width: 100%;
+            }
+
+            .skills__content-wrapper__inner-content__category-text::before , 
+            .skills__content-wrapper__inner-content__category-text::after{
+                position: absolute;
+                content: '';
+                width: 3px;
+                height: 8px;
+                background-color: var(--theme-main-color);
+                bottom: -3px;
+            }
+
+            .skills__content-wrapper__inner-content__category-text::before{
+                left: 0;
+            }
+
+            .skills__content-wrapper__inner-content__category-text::after{
+                right: 0;
+            }
+
+            .skills__content-wrapper__inner-content__progressbar-container{
+                width: 100%;
+            }
+
+            .progressbar-wrapper{
+                padding: 20px 0px;
+                margin-bottom: 15px;
+
+                p{
+                    font-size: 1.4rem;
+                    margin: 0 0 15px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    color: var(--theme-sub-text-color);
+                    letter-spacing: 0.5px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width : 768px){
+    .skills{
+        &__content-wrapper{
+            flex-direction: column
+        }
+    }
+    .skills__content-wrapper__inner-content__progressbar-container{
+        margin-bottom: 20px;
+    }
+}
