@@ -120,23 +120,24 @@
         }
         
         .about__service-item {
-          background: rgba(255, 255, 255, 0.03);
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          background: var(--theme-card-background);
+          border: 1px solid var(--theme-border-color);
           border-radius: 12px;
           padding: 2rem;
           text-align: center;
           transition: all 0.3s ease;
           cursor: pointer;
+          box-shadow: 0 4px 12px var(--theme-shadow);
           
           &:hover {
-            background: rgba(255, 255, 255, 0.06);
+            background: var(--theme-card-background);
             border-color: var(--theme-main-color);
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 24px var(--theme-shadow-hover);
             
             .about__service-icon {
               background: var(--theme-main-color);
-              color: #000;
+              color: var(--theme-background-color);
               transform: scale(1.1);
             }
           }
@@ -144,7 +145,7 @@
           .about__service-icon {
             width: 80px;
             height: 80px;
-            background: rgba(255, 255, 255, 0.05);
+            background: var(--theme-input-background);
             border: 2px solid var(--theme-main-color);
             border-radius: 50%;
             display: flex;

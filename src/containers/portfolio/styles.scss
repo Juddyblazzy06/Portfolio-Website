@@ -54,6 +54,16 @@
       .portfolio__card {
         padding: 0;
         overflow: hidden;
+        border: 1px solid var(--theme-border-color);
+        border-radius: 16px;
+        box-shadow: 0 4px 12px var(--theme-shadow);
+        transition: all 0.3s ease;
+        
+        &:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 8px 24px var(--theme-shadow-hover);
+          border-color: var(--theme-accent-color);
+        }
       }
 
       &__item {

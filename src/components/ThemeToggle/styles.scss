@@ -1,5 +1,5 @@
 .theme-toggle {
-  background: transparent;
+  background: var(--theme-input-background);
   border: 2px solid var(--theme-main-color);
   border-radius: 50px;
   width: 50px;
@@ -11,6 +11,7 @@
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 2px 8px var(--theme-shadow);
 
   &:hover {
     background: var(--theme-main-color);

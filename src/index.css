@@ -6,21 +6,37 @@
     --theme-background-color : #1d1d1d;
     --theme-main-color : #ffdd40;
     --theme-sub-text-color : #ffffff;
-    --theme-nav-background-color : #181818;
+    --theme-text-color : #e5e7eb; /* ✅ Better secondary text color */
+    --theme-nav-background-color : rgba(24, 24, 24, 0.95);
     --theme-card-background : #2a2a2a;
     --theme-border-color : #333333;
     --theme-shadow : rgba(0, 0, 0, 0.3);
+    --theme-shadow-hover : rgba(0, 0, 0, 0.4); /* ✅ Hover shadows */
+    --theme-accent-color : #fbbf24; /* ✅ Accent color for highlights */
+    --theme-success-color : #10b981; /* ✅ Success states */
+    --theme-warning-color : #f59e0b; /* ✅ Warning states */
+    --theme-input-background : #374151; /* ✅ Input field backgrounds */
+    --theme-input-border : #4b5563; /* ✅ Input field borders */
+    --theme-input-focus : #ffdd40; /* ✅ Input focus color */
 }
 
 [data-theme="light"] {
-    /* Light theme */
+    /* Light theme - Enhanced for professional appearance */
     --theme-background-color : #ffffff;
     --theme-main-color : #2563eb;
     --theme-sub-text-color : #1f2937;
-    --theme-nav-background-color : #f8fafc;
-    --theme-card-background : #f1f5f9;
-    --theme-border-color : #e2e8f0;
-    --theme-shadow : rgba(0, 0, 0, 0.1);
+    --theme-text-color : #374151; /* ✅ Better secondary text color */
+    --theme-nav-background-color : rgba(248, 250, 252, 0.95);
+    --theme-card-background : #ffffff;
+    --theme-border-color : #d1d5db; /* ✅ More visible borders */
+    --theme-shadow : rgba(0, 0, 0, 0.08);
+    --theme-shadow-hover : rgba(0, 0, 0, 0.12); /* ✅ Hover shadows */
+    --theme-accent-color : #3b82f6; /* ✅ Accent color for highlights */
+    --theme-success-color : #10b981; /* ✅ Success states */
+    --theme-warning-color : #f59e0b; /* ✅ Warning states */
+    --theme-input-background : #f9fafb; /* ✅ Input field backgrounds */
+    --theme-input-border : #d1d5db; /* ✅ Input field borders */
+    --theme-input-focus : #2563eb; /* ✅ Input focus color */
 }
 
 /* Legacy support for existing CSS variables */
