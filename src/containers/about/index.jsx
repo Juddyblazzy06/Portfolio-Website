@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BsInfoCircleFill } from "react-icons/bs";
 import PageHeaderContent from "../../components/pageHeaderContent";
 import AnimatedSection from "../../components/AnimatedSection";
@@ -136,6 +136,11 @@ const funFacts = [
 ];
 
 const About = () => {
+  // Set document title for about page
+  useEffect(() => {
+    document.title = "Jude - About Me";
+  }, []);
+
   return (
     <section id="about" className="about">
       <PageHeaderContent

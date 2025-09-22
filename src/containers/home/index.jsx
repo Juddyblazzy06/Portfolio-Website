@@ -43,6 +43,11 @@ const Home = () => {
     }
   ];
 
+  // Set document title for home page
+  useEffect(() => {
+    document.title = "Jude - Full-stack Developer";
+  }, []);
+
   // Auto-slide quotes every 4 seconds
   useEffect(() => {
     const quoteInterval = setInterval(() => {

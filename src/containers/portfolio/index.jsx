@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PageHeaderContent from "../../components/pageHeaderContent";
 import { BsInfoCircleFill } from "react-icons/bs";
 import { motion } from "framer-motion";
@@ -270,6 +270,11 @@ const filterData = [
 const Portfolio = () => {
   const [filteredvalue, setFilteredValue] = useState(1);
   const [hoveredValue, setHoveredValue] = useState(null);
+
+  // Set document title for portfolio page
+  useEffect(() => {
+    document.title = "Jude - Projects";
+  }, []);
 
   function handleFilter(currentId) {
     setFilteredValue(currentId);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PageHeaderContent from "../../components/pageHeaderContent";
 import { BsInfoCircleFill } from "react-icons/bs";
 import {
@@ -12,6 +12,11 @@ import './styles.scss';
 import {MdWork} from 'react-icons/md';
 
 const Resume = () => {
+  // Set document title for resume page
+  useEffect(() => {
+    document.title = "Jude - Resume";
+  }, []);
+
   return (
     <section id="resume" className="resume">
       <PageHeaderContent

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import PageHeaderContent from "../../components/pageHeaderContent";
 import { BsInfoCircleFill } from "react-icons/bs";
 import { motion, AnimatePresence } from "framer-motion";
@@ -19,6 +19,11 @@ const Contact = () => {
   const [validationErrors, setValidationErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+
+  // Set document title for contact page
+  useEffect(() => {
+    document.title = "Jude - Contact Me";
+  }, []);
 
   // Contact information with clickable links
   const contactInfo = [

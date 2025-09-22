@@ -1,5 +1,5 @@
 import { Line } from "rc-progress";
-import React from "react";
+import React, { useEffect } from "react";
 import { BsInfoCircleFill } from "react-icons/bs";
 import { motion } from "framer-motion";
 import PageHeaderContent from "../../components/pageHeaderContent";
@@ -10,6 +10,11 @@ import { skillsData } from "./utils";
 import './styles.scss';
 
 const Skills = () => {
+  // Set document title for skills page
+  useEffect(() => {
+    document.title = "Jude - Skills";
+  }, []);
+
   return (
     <section id="skills" className="skills">
       <PageHeaderContent
