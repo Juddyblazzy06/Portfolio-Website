@@ -14,10 +14,11 @@ import "./styles.scss";
 import { useState } from "react";
 
 const portfolioData = [
-  // Frontend Projects
+  // Frontend Projects - Reduced to 3
   {
     id: 1,
     name: "E-commerce Platform",
+    description: "A modern e-commerce platform with secure payment processing, real-time inventory management, and responsive design for optimal shopping experience.",
     image: ImageOne,
     codeLink: "https://github.com/judeamienghemhen/ecommerce-platform",
     liveLink: "https://ecommerce-demo.judeamienghemhen.com",
@@ -27,6 +28,7 @@ const portfolioData = [
   {
     id: 2,
     name: "Portfolio Website",
+    description: "A personal portfolio website showcasing my work and journey as a software engineer with smooth animations and modern design principles.",
     image: ImageTwo,
     codeLink: "https://github.com/judeamienghemhen/portfolio-v2",
     liveLink: "https://judeamienghemhen.com",
@@ -36,44 +38,19 @@ const portfolioData = [
   {
     id: 3,
     name: "Task Management App",
+    description: "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
     image: ImageThree,
     codeLink: "https://github.com/judeamienghemhen/task-manager",
     liveLink: "https://tasks.judeamienghemhen.com",
     tags: ["Vue.js", "Vuex", "TailwindCSS"],
     category: "frontend"
   },
+
+  // API Projects - Keep 6 as requested
   {
     id: 4,
-    name: "Weather Dashboard",
-    image: ImageFour,
-    codeLink: "https://github.com/judeamienghemhen/weather-app",
-    liveLink: "https://weather.judeamienghemhen.com",
-    tags: ["React", "Chart.js", "OpenWeather API"],
-    category: "frontend"
-  },
-  {
-    id: 5,
-    name: "Crypto Tracker",
-    image: ImageFive,
-    codeLink: "https://github.com/judeamienghemhen/crypto-tracker",
-    liveLink: "https://crypto.judeamienghemhen.com",
-    tags: ["Next.js", "TypeScript", "CoinGecko API"],
-    category: "frontend"
-  },
-  {
-    id: 6,
-    name: "Social Media Dashboard",
-    image: ImageOne,
-    codeLink: "https://github.com/judeamienghemhen/social-dashboard",
-    liveLink: "https://social.judeamienghemhen.com",
-    tags: ["Angular", "NgRx", "Material UI"],
-    category: "frontend"
-  },
-
-  // API Projects
-  {
-    id: 7,
     name: "REST API for Blog Platform",
+    description: "A comprehensive RESTful API for blog platforms with user authentication, CRUD operations, and advanced search functionality.",
     image: ImageTwo,
     codeLink: "https://github.com/judeamienghemhen/blog-api",
     liveLink: "https://api.blog.judeamienghemhen.com/docs",
@@ -81,8 +58,9 @@ const portfolioData = [
     category: "api"
   },
   {
-    id: 8,
+    id: 5,
     name: "GraphQL User Management API",
+    description: "A modern GraphQL API for user management with real-time subscriptions, complex queries, and efficient data fetching.",
     image: ImageThree,
     codeLink: "https://github.com/judeamienghemhen/graphql-user-api",
     liveLink: "https://graphql.judeamienghemhen.com/playground",
@@ -90,8 +68,9 @@ const portfolioData = [
     category: "api"
   },
   {
-    id: 9,
+    id: 6,
     name: "E-commerce API",
+    description: "Scalable e-commerce API with inventory management, order processing, payment integration, and automated email notifications.",
     image: ImageFour,
     codeLink: "https://github.com/judeamienghemhen/ecommerce-api",
     liveLink: "https://api.store.judeamienghemhen.com/docs",
@@ -99,8 +78,9 @@ const portfolioData = [
     category: "api"
   },
   {
-    id: 10,
+    id: 7,
     name: "Real-time Chat API",
+    description: "Real-time messaging API with WebSocket connections, message encryption, file sharing, and multi-room support.",
     image: ImageFive,
     codeLink: "https://github.com/judeamienghemhen/chat-api",
     liveLink: "https://chat-api.judeamienghemhen.com",
@@ -108,8 +88,9 @@ const portfolioData = [
     category: "api"
   },
   {
-    id: 11,
+    id: 8,
     name: "Payment Gateway API",
+    description: "Secure payment processing API with multiple provider support, webhook handling, and PCI compliance standards.",
     image: ImageOne,
     codeLink: "https://github.com/judeamienghemhen/payment-api",
     liveLink: "https://payments.judeamienghemhen.com/docs",
@@ -117,8 +98,9 @@ const portfolioData = [
     category: "api"
   },
   {
-    id: 12,
+    id: 9,
     name: "Analytics API",
+    description: "Advanced analytics API with real-time data processing, custom metrics, dashboard integration, and automated reporting.",
     image: ImageTwo,
     codeLink: "https://github.com/judeamienghemhen/analytics-api",
     liveLink: "https://analytics.judeamienghemhen.com",
@@ -126,10 +108,11 @@ const portfolioData = [
     category: "api"
   },
 
-  // Fullstack Projects
+  // Fullstack Projects - Reduced to 3
   {
-    id: 13,
+    id: 10,
     name: "Social Learning Platform",
+    description: "A comprehensive e-learning platform with live video sessions, interactive quizzes, progress tracking, and collaborative study groups.",
     image: ImageThree,
     codeLink: "https://github.com/judeamienghemhen/learning-platform",
     liveLink: "https://learn.judeamienghemhen.com",
@@ -137,8 +120,9 @@ const portfolioData = [
     category: "fullstack"
   },
   {
-    id: 14,
+    id: 11,
     name: "Project Management Tool",
+    description: "Advanced project management solution with team collaboration, time tracking, Gantt charts, and automated workflow management.",
     image: ImageFour,
     codeLink: "https://github.com/judeamienghemhen/project-manager",
     liveLink: "https://projects.judeamienghemhen.com",
@@ -146,46 +130,21 @@ const portfolioData = [
     category: "fullstack"
   },
   {
-    id: 15,
+    id: 12,
     name: "Real Estate Platform",
+    description: "Modern real estate platform with property listings, virtual tours, mortgage calculators, and agent management system.",
     image: ImageFive,
     codeLink: "https://github.com/judeamienghemhen/real-estate",
     liveLink: "https://realestate.judeamienghemhen.com",
     tags: ["Vue.js", "Laravel", "MySQL", "Cloudinary"],
     category: "fullstack"
   },
-  {
-    id: 16,
-    name: "Inventory Management System",
-    image: ImageOne,
-    codeLink: "https://github.com/judeamienghemhen/inventory-system",
-    liveLink: "https://inventory.judeamienghemhen.com",
-    tags: ["React", "Django", "PostgreSQL", "Docker"],
-    category: "fullstack"
-  },
-  {
-    id: 17,
-    name: "Event Booking Platform",
-    image: ImageTwo,
-    codeLink: "https://github.com/judeamienghemhen/event-booking",
-    liveLink: "https://events.judeamienghemhen.com",
-    tags: ["Angular", "NestJS", "MongoDB", "PayPal"],
-    category: "fullstack"
-  },
-  {
-    id: 18,
-    name: "Food Delivery App",
-    image: ImageThree,
-    codeLink: "https://github.com/judeamienghemhen/food-delivery",
-    liveLink: "https://food.judeamienghemhen.com",
-    tags: ["React Native", "Node.js", "MongoDB", "Maps API"],
-    category: "fullstack"
-  },
 
-  // AI Projects
+  // AI Projects - Reduced to 3
   {
-    id: 19,
+    id: 13,
     name: "AI Chatbot Assistant",
+    description: "Intelligent conversational AI with natural language processing, context awareness, and multi-language support for customer service.",
     image: ImageFour,
     codeLink: "https://github.com/judeamienghemhen/ai-chatbot",
     liveLink: "https://chatbot.judeamienghemhen.com",
@@ -193,8 +152,9 @@ const portfolioData = [
     category: "ai"
   },
   {
-    id: 20,
+    id: 14,
     name: "Image Classification App",
+    description: "Advanced computer vision application with deep learning models for accurate image recognition and automated tagging system.",
     image: ImageFive,
     codeLink: "https://github.com/judeamienghemhen/image-classifier",
     liveLink: "https://classify.judeamienghemhen.com",
@@ -202,39 +162,13 @@ const portfolioData = [
     category: "ai"
   },
   {
-    id: 21,
+    id: 15,
     name: "Sentiment Analysis Tool",
+    description: "Real-time sentiment analysis platform for social media monitoring, customer feedback processing, and market research insights.",
     image: ImageOne,
     codeLink: "https://github.com/judeamienghemhen/sentiment-analysis",
     liveLink: "https://sentiment.judeamienghemhen.com",
     tags: ["Node.js", "Natural", "Express", "NLP"],
-    category: "ai"
-  },
-  {
-    id: 22,
-    name: "Recommendation Engine",
-    image: ImageTwo,
-    codeLink: "https://github.com/judeamienghemhen/recommendation-engine",
-    liveLink: "https://recommend.judeamienghemhen.com",
-    tags: ["Node.js", "TensorFlow.js", "ML", "Collaborative Filtering"],
-    category: "ai"
-  },
-  {
-    id: 23,
-    name: "Voice Recognition App",
-    image: ImageThree,
-    codeLink: "https://github.com/judeamienghemhen/voice-recognition",
-    liveLink: "https://voice.judeamienghemhen.com",
-    tags: ["Node.js", "Speech Recognition", "React", "Web Audio"],
-    category: "ai"
-  },
-  {
-    id: 24,
-    name: "Predictive Analytics Dashboard",
-    image: ImageFour,
-    codeLink: "https://github.com/judeamienghemhen/predictive-analytics",
-    liveLink: "https://predict.judeamienghemhen.com",
-    tags: ["Node.js", "TensorFlow.js", "Chart.js", "Express"],
     category: "ai"
   }
 ];
@@ -289,7 +223,7 @@ const Portfolio = () => {
   console.log("====================================");
 
   const filteredItems = filteredvalue === 1
-    ? portfolioData
+      ? portfolioData
     : portfolioData.filter((item) => {
         const selectedFilter = filterData.find(filter => filter.filterId === filteredvalue);
         return selectedFilter && item.category === selectedFilter.category;
@@ -348,32 +282,33 @@ const Portfolio = () => {
                   >
                     <div className="overlay__content">
                       <h3>{item.name}</h3>
+                      <p className="overlay__description">{item.description}</p>
+                      <div className="overlay__tags">
+                        {item.tags?.map((t) => (
+                          <span key={t} className="tag-chip">{t}</span>
+                        ))}
+                      </div>
                       <div className="overlay__actions">
                         <motion.a
                           href={item.codeLink}
                           target="_blank"
                           rel="noreferrer"
-                          whileHover={{ scale: 1.05 }}
+                          whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.95 }}
                           className="btn btn-outline"
                         >
-                          Code
+                          Code {">="}
                         </motion.a>
                         <motion.a
                           href={item.liveLink}
                           target="_blank"
                           rel="noreferrer"
-                          whileHover={{ scale: 1.05 }}
+                          whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.95 }}
                           className="btn btn-solid"
                         >
-                          Live
+                          Live {"<~>"}
                         </motion.a>
-                      </div>
-                      <div className="overlay__tags">
-                        {item.tags?.map((t) => (
-                          <span key={t} className="tag-chip">{t}</span>
-                        ))}
                       </div>
                     </div>
                   </motion.div>

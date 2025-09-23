@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { BsInfoCircleFill } from "react-icons/bs";
+import { motion } from "framer-motion";
 import PageHeaderContent from "../../components/pageHeaderContent";
 import AnimatedSection from "../../components/AnimatedSection";
 import ModernCard from "../../components/ModernCard";
@@ -154,29 +155,29 @@ const About = () => {
             <h3>Hello, I'm Jude!</h3>
             <p className="about__hello-intro">{jobSummary}</p>
             <p className="about__hello-details">{additionalContent}</p>
-          </ModernCard>
-        </AnimatedSection>
+            </ModernCard>
+          </AnimatedSection>
 
         {/* Personal Information section */}
         <AnimatedSection direction="up" delay={0.4}>
           <ModernCard className="about__personal-info-card">
-            <h3 className="personalInformationHeaderText">
-              Personal Information
-            </h3>
-            <ul>
-              {personalDetails.map((item, i) => (
-                <li key={i}>
-                  <span className="title">{item.label}</span>
-                  <span className="value">{item.value}</span>
-                </li>
-              ))}
-            </ul>
-          </ModernCard>
-        </AnimatedSection>
-
+              <h3 className="personalInformationHeaderText">
+                Personal Information
+              </h3>
+              <ul>
+                {personalDetails.map((item, i) => (
+                  <li key={i}>
+                    <span className="title">{item.label}</span>
+                    <span className="value">{item.value}</span>
+                  </li>
+                ))}
+              </ul>
+            </ModernCard>
+          </AnimatedSection>
+        
         {/* Full-width Professional Services section */}
-        <AnimatedSection direction="up" delay={0.6}>
-          <ModernCard className="about__services-card" glassmorphism={true}>
+          <AnimatedSection direction="up" delay={0.6}>
+            <ModernCard className="about__services-card" glassmorphism={true}>
             <h3>Professional Services</h3>
             <div className="about__services-grid">
               {servicesData.map((service, index) => (
@@ -249,6 +250,27 @@ const About = () => {
             </ModernCard>
           </AnimatedSection>
         </div>
+
+        {/* Resume Button Section */}
+        <AnimatedSection direction="up" delay={0.8} className="about__resume-section">
+          <div className="about__resume-button-container">
+            <motion.a 
+              href="https://flowcv.com/resume/lasqsicff0gi" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="about__resume-button"
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 12px 35px rgba(255, 221, 64, 0.4)",
+                transition: { duration: 0.2 }
+              }}
+              whileTap={{ scale: 0.95 }}
+            >
+              My Resume
+            </motion.a>
+      </div>
+        </AnimatedSection>
+
       <Footer />
     </section>
   );

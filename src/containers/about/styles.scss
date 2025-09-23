@@ -46,23 +46,23 @@
       text-align: center;
       margin-bottom: 25px;
       font-size: 2.4rem;
-      font-weight: 700;
-      color: var(--theme-main-color);
-    }
+        font-weight: 700;
+        color: var(--theme-main-color);
+      }
 
     ul {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 15px;
-      list-style: none;
-      padding: 0;
+        list-style: none;
+        padding: 0;
       max-width: 800px;
       margin: 0 auto;
-      
-      li {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        
+        li {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
         padding: 15px 20px;
         background: var(--theme-input-background);
         border: 1px solid var(--theme-border-color);
@@ -77,22 +77,22 @@
           box-shadow: 0 4px 16px var(--theme-shadow-hover);
         }
 
-        span.title {
+          span.title {
           font-size: 1.4rem;
-          font-weight: 600;
-          color: var(--theme-main-color);
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-        }
+            font-weight: 600;
+            color: var(--theme-main-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+          }
 
-        span.value {
+          span.value {
           font-size: 1.4rem;
           color: var(--theme-text-color);
-          font-weight: 500;
+            font-weight: 500;
+          }
         }
       }
     }
-  }
 
 
     .about__services-card {
@@ -335,10 +335,10 @@
             bottom: 0;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             animation: progressShine 2s ease-in-out infinite;
-          }
         }
       }
     }
+  }
 }
 
 @keyframes rotation {
@@ -497,4 +497,221 @@
             }
         }
     }
+}
+
+// Resume Button Section - Matching home page CTA button style
+.about__resume-section {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  width: 100%;
+  
+  // Ensure proper centering on all devices
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px; // Add horizontal padding for small screens
+}
+
+.about__resume-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  
+  // Prevent button overflow on very small screens
+  overflow: hidden;
+}
+
+.about__resume-button {
+  background: linear-gradient(135deg, var(--theme-main-color), #ff6b6b);
+  color: #000;
+  border: none;
+  padding: 1.5rem 3rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 30px rgba(255, 221, 64, 0.3);
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s ease;
+  }
+  
+  &:hover::before {
+    left: 100%;
+  }
+}
+
+// Additional responsive breakpoints for better mobile experience
+@media (max-width: 480px) {
+    .about {
+        &__content {
+            padding: 10px;
+        }
+
+        &__hello-card {
+            margin-bottom: 15px;
+            
+            h3 {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+
+            .about__hello-intro {
+                font-size: 1.3rem;
+                margin-bottom: 12px;
+            }
+
+            .about__hello-details {
+                font-size: 1.1rem;
+            }
+        }
+
+        &__personal-info-card {
+            margin-bottom: 15px;
+            
+            h3 {
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+            }
+
+            ul {
+                gap: 10px;
+                
+                li {
+                    padding: 10px 12px;
+                    
+                    span.title {
+                        font-size: 1.1rem;
+                    }
+                    
+                    span.value {
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+        }
+
+        &__services-card {
+            margin-bottom: 15px;
+            
+            h3 {
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .about__services-grid {
+                gap: 1.2rem;
+                
+                .about__service-item {
+                    padding: 1.2rem;
+                    
+                    .about__service-icon {
+                        width: 60px;
+                        height: 60px;
+                        margin-bottom: 1rem;
+                        
+                        svg {
+                            width: 28px;
+                            height: 28px;
+                        }
+                    }
+                    
+                    .about__service-content {
+                        h4 {
+                            font-size: 1.3rem;
+                            margin-bottom: 0.6rem;
+                        }
+                        
+                        p {
+                            font-size: 1.1rem;
+                            line-height: 1.4;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__skills-card {
+            margin-bottom: 15px;
+            
+            h3 {
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .about__skills-grid {
+                gap: 1.2rem;
+                
+                .about__skill-category {
+                    padding: 1rem;
+                }
+            }
+        }
+
+        &__skill-category-header {
+            margin-bottom: 1rem;
+            
+            h4 {
+                font-size: 1.2rem;
+            }
+        }
+
+        &__skill-item {
+            margin-bottom: 0.8rem;
+            
+            .about__skill-info {
+                .about__skill-name {
+                    font-size: 1.1rem;
+                }
+
+                .about__skill-percentage {
+                    font-size: 0.95rem;
+                }
+            }
+        }
+
+        &__fun-facts-card {
+            margin-bottom: 15px;
+            
+            h3 {
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        &__fun-facts-grid {
+            gap: 0.8rem;
+        }
+
+        &__fun-fact {
+            padding: 0.8rem;
+        }
+
+        &__fun-fact-text {
+            font-size: 1rem;
+        }
+    }
+}
+
+// Responsive adjustments for resume button - matching home page pattern
+@media only screen and (max-width: 768px) {
+  .about__resume-button {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.4rem;
+  }
 }
